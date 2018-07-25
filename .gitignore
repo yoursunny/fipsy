@@ -1,0 +1,7 @@
+.recovery
+*.html
+*.ini
+*.log
+*.xml
+*_tcr.dir
+Implementation
