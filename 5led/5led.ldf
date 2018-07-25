@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaliProject version="3.2" title="5led" device="LCMXO2-256HC-4SG32C" default_implementation="Implementation">
+    <Options/>
+    <Implementation title="Implementation" dir="Implementation" description="Implementation" synthesis="lse" default_strategy="Strategy1">
+        <Options def_top="top"/>
+        <Source name="top.v" type="Verilog" type_short="Verilog">
+            <Options top_module="top"/>
+        </Source>
+        <Source name="logic.v" type="Verilog" type_short="Verilog">
+            <Options/>
+        </Source>
+        <Source name="5led.lpf" type="Logic Preference" type_short="LPF">
+            <Options/>
+        </Source>
+    </Implementation>
+    <Strategy name="Strategy1" file="FipsyBaseline.sty"/>
+</BaliProject>
