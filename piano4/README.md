@@ -2,6 +2,8 @@
 
 Four-key piano.
 
+https://yoursunny.com/t/2018/fipsy-piano/
+
 ## Wiring
 
 Components:
