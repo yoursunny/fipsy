@@ -1,7 +1,8 @@
+// Sound wave generator for passive buzzer.
 module wave(buzzer, clk, enable, div, volume);
 
-parameter width = 17;     // minimum log2(clk_freq/max_div)
-parameter volw = 1;       // width of volume counter, minimum 1
+parameter width = 17; // minimum log2(clk_freq/max_div)
+parameter volw = 1;   // width of volume counter, minimum 1
 
 output buzzer;         // passive buzzer
 input clk;             // clock
@@ -26,6 +27,6 @@ always @(posedge clk) begin
 	end
 end
 
-assign buzzer = enable ? (spk < volume) : 0'bZ;
+assign buzzer = enable ? (spk < volume) : 1'bZ;
 
 endmodule

@@ -11,14 +11,11 @@ parameter volume = 1;      // volume, minimum 1, maximum ((1<<volw)-1)
 
 input clk;
 input key1, key2, key3, key4;
-output buzzer; // passive buzzer
+output buzzer;
 
 reg [width:1] div;
-reg enable;
 
 always @(posedge clk) begin
-	enable <= key1 | key2 | key3 | key4;
-
 	if (key1) begin
 		div <= freq / note1 / (1 << volw);
 	end else if (key2) begin
@@ -29,6 +26,9 @@ always @(posedge clk) begin
 		div <= freq / note4 / (1 << volw);
 	end
 end
+
+wire enable;
+assign enable = key1 | key2 | key3 | key4;
 
 defparam w.width = width;
 defparam w.volw = volw;
