@@ -7,7 +7,6 @@ module top(
 // pins
 inout PIN7, PIN8, PIN9, PIN10, PIN11, PIN12, PIN13, PIN14, PIN17, PIN18, PIN19, PIN20;
 output LEDn;
-wire PIN7, PIN8, PIN9, PIN10, PIN11, PIN12, PIN13, PIN14, PIN17, PIN18, PIN19, PIN20, LEDn;
 
 // internal oscillator
 wire INTERNAL_OSC;
