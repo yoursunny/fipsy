@@ -1,8 +1,14 @@
 *.ccl
+*.edn
 *.html
 *.ini
 *.log
+*.naf
+._Real_._Math_.vhd
 .recovery
+*.sort
+*.srp
+*.sym
 *.tcl
 *.xml
 *_tcr.dir
