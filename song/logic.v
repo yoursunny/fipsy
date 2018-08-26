@@ -10,7 +10,7 @@ reg [9:1] state;
 reg [17:1] div;
 wire enable;
 
-defparam w.width = 12;
+defparam w.width = 13;
 wave w(.buzzer(buzzer), .clk(clk), .enable(enable), .div(div), .volume(1'b1));
 
 wire [6:0] index;
