@@ -18,6 +18,7 @@ assign PIN7 = 0;
 assign PIN8 = 0;
 assign PIN9 = 0;
 assign PIN10 = 0;
+assign PIN13 = 0;
 assign PIN14 = 0;
 assign PIN17 = 0;
 assign PIN18 = 0;
@@ -26,12 +27,8 @@ assign PIN20 = 0;
 assign LEDn = 0;
 
 // logic
-assign PIN12 = 0; // unused buzzer
-assign PIN13 = 0; // unused buzzer
-
 wire tempo;
 efb efb(.tc_clki(INTERNAL_OSC), .tc_rstn(1'b1), .tc_int(), .tc_oc(tempo));
-
-logic logic(.buzzer(PIN11), .clk(INTERNAL_OSC), .tempo(tempo));
+logic logic(.buzzer0(PIN11), .buzzer1(PIN12), .clk(INTERNAL_OSC), .tempo(tempo));
 
 endmodule
