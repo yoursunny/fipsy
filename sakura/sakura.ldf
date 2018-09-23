@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<BaliProject version="3.2" title="song" device="LCMXO2-256HC-4SG32C" default_implementation="Implementation">
+<BaliProject version="3.2" title="sakura" device="LCMXO2-256HC-4SG32C" default_implementation="Implementation">
     <Options/>
     <Implementation title="Implementation" dir="Implementation" description="Implementation" synthesis="lse" default_strategy="Strategy1">
         <Options def_top="top"/>
@@ -15,7 +15,7 @@
         <Source name="logic.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
-        <Source name="song.lpf" type="Logic Preference" type_short="LPF">
+        <Source name="sakura.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
         </Source>
     </Implementation>
