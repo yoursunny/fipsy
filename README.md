@@ -15,6 +15,8 @@ This repository collects my Verilog code for Fipsy board.
 
 [sakura](sakura): play music with two passive buzzers.
 
+[neopixel18](neopixel18): display colors on a NeoPixel ring.
+
 ## License
 
 My code is released to public domain under 0BSD license.
