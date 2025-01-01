@@ -2,7 +2,7 @@
 
 Four-key piano.
 
-https://yoursunny.com/t/2018/fipsy-piano/
+<https://yoursunny.com/t/2018/fipsy-piano/>
 
 ## Wiring
 
@@ -13,11 +13,11 @@ Components:
 
 Fipsy | Keypad | Buzzer
 ------|--------|-------
-10    |        | S
-11    | K1     |
-12    | K2     |
-13    | K3     |
-14    | K4     |
+10    | -      | S
+11    | K1     | -
+12    | K2     | -
+13    | K3     | -
+14    | K4     | -
 15    | VCC    | VCC
 16    | GND    | GND
 

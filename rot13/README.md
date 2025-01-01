@@ -4,11 +4,15 @@ ROT13 letter substitution cipher in UART.
 
 ## Wiring
 
-peripheral|peripheral pin|Fipsy pin
-----------|--------------|---------
-USB-UART  |GND           |2
-USB-UART  |TXD           |9 (RX)
-USB-UART  |RXD           |8 (TX)
+Components:
+
+* USB-UART adapter (3.3V logic)
+
+Fipsy   | USB-UART
+--------|---------
+2 (GND) | GND
+8 (TX)  | RXD
+9 (RX)  | TXD
 
 Fipsy may be powered by USB-UART's 3V3 pin, if it does not have other power source.
 
