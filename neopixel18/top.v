@@ -28,6 +28,8 @@ assign LEDn = 0;
 
 // wires
 wire clk, rst, neoPixelPin, rdNext, msgTyp;
+reg [0:23] cnt;
+reg change;
 reg [7:0] ledG = 8'h0;
 reg [7:0] ledR = 8'h0;
 reg [7:0] ledB = 8'h0;
@@ -57,21 +59,35 @@ assign msgTyp = pos < 5'd18;
 always @(posedge clk or negedge rst) begin
   if (!rst) begin
 
+    cnt <= 1'b0;
+    change <= 1'b0;
+
     index <= ~6'd0;
 
     ledG <= 8'h30;
     ledR <= 8'h00;
     ledB <= 8'h00;
 
-  end else if (rdNext) begin
-    index <= index - 5'd1;
-
-    if (ticker && pos < 5'd18) begin
-      ledG <= ledR;
-      ledR <= ledB;
-      ledB <= ledG;
+  end else begin
+    cnt <= cnt + 1'b1;
+    if (cnt == 0) begin
+      change <= 1'b1;
     end
 
+    if (rdNext) begin
+      index <= index - 5'd1;
+
+      if (ticker && pos < 5'd18) begin
+        if (change) begin
+          change <= 1'b0;
+        end else begin
+          ledG <= ledR;
+          ledR <= ledB;
+          ledB <= ledG;
+        end
+      end
+
+    end
   end
 end
 

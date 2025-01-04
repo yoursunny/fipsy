@@ -1,6 +1,6 @@
 # neopixel18
 
-Display static colors on 18x NeoPixels.
+Display colors on 18x NeoPixels.
 
 ## Wiring
 
