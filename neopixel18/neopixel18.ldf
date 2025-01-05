@@ -9,6 +9,9 @@
         <Source name="neopixel_tx_fsm.v" type="Verilog" type_short="Verilog">
             <Options/>
         </Source>
+        <Source name="efb.ipx" type="IPX_Module" type_short="IPX">
+            <Options/>
+        </Source>
         <Source name="neopixel18.lpf" type="Logic Preference" type_short="LPF">
             <Options/>
         </Source>

@@ -41,6 +41,15 @@ assign clk = INTERNAL_OSC;
 assign rst = PIN10;
 assign PIN14 = neoPixelPin;
 
+// EFB counter
+wire efbOvf;
+efb EFB_inst(
+  .tc_clki(clk),
+  .tc_rstn(rst),
+  .tc_int(),
+  .tc_oc(efbOvf)
+);
+
 // NeoPixel transmitter
 neopixel_tx_fsm np(
   .clk(clk),
@@ -69,9 +78,11 @@ always @(posedge clk or negedge rst) begin
     ledB <= 8'h00;
 
   end else begin
-    cnt <= cnt + 1'b1;
-    if (cnt == 0) begin
-      change <= 1'b1;
+    if (efbOvf) begin
+      cnt <= cnt + 1'b1;
+      if (cnt == 0) begin
+        change <= 1'b1;
+      end
     end
 
     if (rdNext) begin
