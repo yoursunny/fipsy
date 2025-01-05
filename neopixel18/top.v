@@ -27,13 +27,11 @@ assign PIN20 = 0;
 assign LEDn = 0;
 
 // wires
-wire clk, rst, neoPixelPin, rdNext, msgTyp;
+wire clk, rst, efbOvf, neoPixelPin, rdNext, msgTyp;
 reg [0:23] cnt;
 reg change;
-reg [7:0] ledG = 8'h0;
-reg [7:0] ledR = 8'h0;
-reg [7:0] ledB = 8'h0;
-reg [5:0] index = 6'd0;
+reg [143:0] colors;
+reg [5:0] index;
 wire [4:0] pos = index[5:1];
 wire ticker = index[0];
 
@@ -42,7 +40,6 @@ assign rst = PIN10;
 assign PIN14 = neoPixelPin;
 
 // EFB counter
-wire efbOvf;
 efb EFB_inst(
   .tc_clki(clk),
   .tc_rstn(rst),
@@ -57,7 +54,7 @@ neopixel_tx_fsm np(
   .mode(1'b1),
   .tx_enable(1'b1),
   .empty_flg(1'b0),
-  .neo_dIn({ledG, ledR, ledB}),
+  .neo_dIn(colors[23:0]),
   .rgb_msgTyp(msgTyp),
   .rd_next(rdNext),
   .neo_tx_out(neoPixelPin)
@@ -72,10 +69,12 @@ always @(posedge clk or negedge rst) begin
     change <= 1'b0;
 
     index <= ~6'd0;
-
-    ledG <= 8'h30;
-    ledR <= 8'h00;
-    ledB <= 8'h00;
+    colors[23:0] <= 24'h660000;
+    colors[47:24] <= 24'h333300;
+    colors[71:48] <= 24'h006600;
+    colors[95:72] <= 24'h003333;
+    colors[119:96] <= 24'h000066;
+    colors[143:120] <= 24'h330033;
 
   end else begin
     if (efbOvf) begin
@@ -92,9 +91,7 @@ always @(posedge clk or negedge rst) begin
         if (change) begin
           change <= 1'b0;
         end else begin
-          ledG <= ledR;
-          ledR <= ledB;
-          ledB <= ledG;
+          colors <= {colors[119:0], colors[143:120]};
         end
       end
 

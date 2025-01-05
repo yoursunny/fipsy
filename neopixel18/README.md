@@ -17,7 +17,7 @@ Connections:
 
 ## Effect
 
-NeoPixels display green / red / blue colors alternatively.
+NeoPixels display six rotating colors.
 
 Photo: <https://x.com/yoursunny/status/1874646701807689786>
 
