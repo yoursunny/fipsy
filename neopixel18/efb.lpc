@@ -17,7 +17,7 @@ ModuleName=efb
 SourceFormat=Verilog HDL
 ParameterFileVersion=1.0
 Date=01/05/2025
-Time=09:41:52
+Time=12:15:25
 
 [Parameters]
 Verilog=1
@@ -64,15 +64,15 @@ static_tc=Static
 tc=1
 tc_clkinv=Positive
 tc_ctr=0
-tc_div=0
+tc_div=1
 tc_ipcap=0
 tc_mode=CTCM
 tc_ocr=32767
 tc_oflow=0
-tc_o=TOGGLE
+tc_o=STATIC
 tc_opcomp=0
-tc_osc=0
-tc_sa_oflow=0
+tc_osc=1
+tc_sa_oflow=1
 tc_top=65535
 ufm=0
 ufm0=0
@@ -138,4 +138,4 @@ t_wbport=0
 t_portlock=0
 
 [Command]
-cmd_line= -w -n efb -lang verilog -synth lse -bus_exp 7 -bb -type efb -arch xo2c00 -freq 50 -static_tc -tc -tc_mode CTCM -tc_o TOGGLE -tc_div 0 -tc_top 65535 -tc_ocr 32767 -dev 256
+cmd_line= -w -n efb -lang verilog -synth lse -bus_exp 7 -bb -type efb -arch xo2c00 -freq 50 -static_tc -tc -tc_mode CTCM -tc_o STATIC -tc_div 1 -tc_top 65535 -tc_ocr 32767 -tc_sa_oflow -tc_osc -dev 256

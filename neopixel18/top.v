@@ -28,7 +28,7 @@ assign LEDn = 0;
 
 // wires
 wire clk, rst, efbOvf, neoPixelPin, rdNext, msgTyp;
-reg [0:23] cnt;
+reg [0:7] cnt;
 reg change;
 reg [143:0] colors;
 reg [5:0] index;
@@ -43,8 +43,8 @@ assign PIN14 = neoPixelPin;
 efb EFB_inst(
   .tc_clki(clk),
   .tc_rstn(rst),
-  .tc_int(),
-  .tc_oc(efbOvf)
+  .tc_int(efbOvf),
+  .tc_oc()
 );
 
 // NeoPixel transmitter
