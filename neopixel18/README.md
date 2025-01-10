@@ -2,6 +2,8 @@
 
 Display colors on 18x NeoPixels.
 
+<https://yoursunny.com/t/2025/fipsy-neopixel18/>
+
 ## Wiring
 
 Components:
@@ -19,7 +21,7 @@ Connections:
 
 NeoPixels display six rotating colors.
 
-Photo: <https://x.com/yoursunny/status/1874646701807689786>
+Video: <https://x.com/yoursunny/status/1875985106822897732>
 
 ## Acknowledgement
 
